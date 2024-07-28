@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 function custom_ajax_enqueue_script() {
     // Enqueue the custom JavaScript file
     wp_enqueue_script('custom-ajax-script', plugin_dir_url(__FILE__) . 'custom-ajax-script.js', array('jquery'), '1.0', true);
-    // Localize data for the script, making PHP variables available in JavaScrip
+    // Localize data for the script, making PHP variables available in JavaScript
     wp_localize_script('custom-ajax-script', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', 'custom_ajax_enqueue_script');
